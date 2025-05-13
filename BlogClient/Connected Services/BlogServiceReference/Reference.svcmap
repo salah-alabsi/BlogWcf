@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="0bac0205-23ea-4f5e-8294-8feb00055fb9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings>
+      <NamespaceMapping TargetNamespace="BlogClient.BlogService" ClrNamespace="*" />
+    </NamespaceMappings>
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/BlogService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service3.wsdl" MetadataType="Wsdl" ID="125dd904-e26b-4d8a-8454-b650acdf40aa" SourceId="1" SourceUrl="http://localhost:8080/BlogService/mex" />
+    <MetadataFile FileName="service6.xsd" MetadataType="Schema" ID="da0230ca-1259-4747-9fd3-cb37728b005f" SourceId="1" SourceUrl="http://localhost:8080/BlogService/mex" />
+    <MetadataFile FileName="service7.xsd" MetadataType="Schema" ID="eb9e20d3-3d33-49a8-b6ed-af21cebee95d" SourceId="1" SourceUrl="http://localhost:8080/BlogService/mex" />
+    <MetadataFile FileName="BlogLib3.xsd" MetadataType="Schema" ID="3fbbecd3-4529-4727-9c21-7640c33a498f" SourceId="1" SourceUrl="http://localhost:8080/BlogService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration913.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration3.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
