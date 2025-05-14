@@ -9,8 +9,8 @@ namespace BlogClient
         static async Task Main(string[] args)  // تغيير هنا إلى async Task
         {
             BlogServiceClient client = new BlogServiceClient();
-            client.ClientCredentials.UserName.UserName = "alice";
-            client.ClientCredentials.UserName.Password = "pass";
+            client.ClientCredentials.UserName.UserName = "admin";
+            client.ClientCredentials.UserName.Password = "admin";
             BlogPost result1 = await client.AddPostAsync("First Blog", "Hello from WCF!");
             Console.WriteLine($"Post added successfully: {result1.Id} ");
             BlogPost result2=await  client.AddPostAsync("Another Post", "This is a test.");

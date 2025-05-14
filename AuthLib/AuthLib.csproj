@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FBB5BC73-CB32-40BA-B8EE-14627C1BB88D}</ProjectGuid>
+    <ProjectGuid>{9A4C2DC2-652D-4034-8406-057C6B3D9605}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BlogLib</RootNamespace>
-    <AssemblyName>BlogLib</AssemblyName>
+    <RootNamespace>AuthLib</RootNamespace>
+    <AssemblyName>AuthLib</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -26,8 +26,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>0</WarningLevel>
-    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -52,60 +51,35 @@
     <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Duplex, Version=8.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ServiceModel.Primitives.8.1.2\lib\net462\System.ServiceModel.Duplex.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Primitives, Version=8.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ServiceModel.Primitives.8.1.2\lib\net462\System.ServiceModel.Primitives.dll</HintPath>
-    </Reference>
-    <Reference Include="System.ServiceModel.Security, Version=8.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ServiceModel.Primitives.8.1.2\lib\net462\System.ServiceModel.Security.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlogPost.cs" />
-    <Compile Include="BlogContext.cs" />
-    <Compile Include="blog\PermissionChecker.cs" />
-    <Compile Include="blog\CustomUserValidator .cs" />
-    <Compile Include="IBlogService.cs" />
-    <Compile Include="Migrations\202505101434478_InitialCreate.cs" />
-    <Compile Include="Migrations\202505101434478_InitialCreate.Designer.cs">
-      <DependentUpon>202505101434478_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202505101442227_InitialCreate1.cs" />
-    <Compile Include="Migrations\202505101442227_InitialCreate1.Designer.cs">
-      <DependentUpon>202505101442227_InitialCreate1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202505101443301_InitialCreate2.cs" />
-    <Compile Include="Migrations\202505101443301_InitialCreate2.Designer.cs">
-      <DependentUpon>202505101443301_InitialCreate2.cs</DependentUpon>
+    <Compile Include="Data\AuthDbContext.cs" />
+    <Compile Include="Entities\RolePermission.cs" />
+    <Compile Include="Entities\UserRole.cs" />
+    <Compile Include="Entities\Permission.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="IService1.cs" />
+    <Compile Include="Migrations\202505131157454_InitialAuthMigration.cs" />
+    <Compile Include="Migrations\202505131157454_InitialAuthMigration.Designer.cs">
+      <DependentUpon>202505131157454_InitialAuthMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BlogService.cs" />
+    <Compile Include="Service1.cs" />
+    <Compile Include="Services\PermissionChecker.cs" />
+    <Compile Include="Services\CustomUserValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202505101434478_InitialCreate.resx">
-      <DependentUpon>202505101434478_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505131157454_InitialAuthMigration.resx">
+      <DependentUpon>202505131157454_InitialAuthMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505101442227_InitialCreate1.resx">
-      <DependentUpon>202505101442227_InitialCreate1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505101443301_InitialCreate2.resx">
-      <DependentUpon>202505101443301_InitialCreate2.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AuthLib\AuthLib.csproj">
-      <Project>{9a4c2dc2-652d-4034-8406-057c6b3d9605}</Project>
-      <Name>AuthLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
